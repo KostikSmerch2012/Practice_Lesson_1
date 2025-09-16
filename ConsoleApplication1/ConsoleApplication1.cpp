@@ -9,15 +9,6 @@
 
 const double PI = 3.14159265358979323846;
 
-//void enter_func(double* a, double* b, double* c) {
-//    std::cout << "First number: ";
-//    std::cin >> *a;
-//    std::cout << "Second number: ";
-//    std::cin >> *b;
-//    std::cout << "Second number: ";
-//    std::cin >> *c;
-//}
-
 
 void task1_1() {
     std::cout << "Ваше имя" << std::endl;
@@ -70,6 +61,9 @@ void task1_4() {
     D = pow(b, 2) - 4 * a * c;
     if (D < 0) {
         std::cout << "Нет корней" << std::endl;
+    }
+    if (a != 0 && b != 0 && c == 0) {
+        cout << "x = 0 или " << -b / a << endl;
     }
     if (a == 0) {
         if (b == 0) {
