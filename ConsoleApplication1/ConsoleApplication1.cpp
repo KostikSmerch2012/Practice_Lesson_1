@@ -9,14 +9,14 @@
 
 const double PI = 3.14159265358979323846;
 
-void enter_func(double* a, double* b, double* c) {
-    std::cout << "First number: ";
-    std::cin >> *a;
-    std::cout << "Second number: ";
-    std::cin >> *b;
-    std::cout << "Second number: ";
-    std::cin >> *c;
-}
+//void enter_func(double* a, double* b, double* c) {
+//    std::cout << "First number: ";
+//    std::cin >> *a;
+//    std::cout << "Second number: ";
+//    std::cin >> *b;
+//    std::cout << "Second number: ";
+//    std::cin >> *c;
+//}
 
 
 void task1_1() {
@@ -24,8 +24,11 @@ void task1_1() {
 }
 
 void task1_2() {
-    double a, b, c;
-    enter_func(&a, &b, &c);
+    double a, b;
+    std::cout << "First number: ";
+    std::cin >> a;
+    std::cout << "Second number: ";
+    std::cin >> b;
     std::cout << a + b << "<- Сумма" << std::endl;
     std::cout << a - b << "<- Разность" << std::endl;
     std::cout << a * b << "<- Произведение" << std::endl;
@@ -33,15 +36,15 @@ void task1_2() {
         std::cout << a / b << "<- Делелие" << std::endl;
     }
     else {
-        std::cout << "Знаменатель не может быть нулём!";
+        std::cout << "Знаменатель не может быть нулём";
     }
 }
 
 void task1_3() {
     double b, c;
-    std::cout << "First number: \n";
+    std::cout << "First number: ";
     std::cin >> b;
-    std::cout << "Second number: \n";
+    std::cout << "Second number: ";
     std::cin >> c;
     if (b != 0) {
         std::cout << -c / b << std::endl;
@@ -53,6 +56,8 @@ void task1_3() {
         std::cout << "Нет решений" << std::endl;
     }
 }
+
+using namespace std;
 
 void task1_4() {
     double a, b, c, D;
@@ -66,15 +71,23 @@ void task1_4() {
     if (D < 0) {
         std::cout << "Нет корней" << std::endl;
     }
-    if (a != 0 || b != 0 || c != 0) {
+    if (a == 0) {
+        if (b == 0) {
+            if (c == 0) {
+                cout << "Уравнение имеет бесконечно много решений." << endl;
+            }
+            else {
+                cout << "Уравнение не имеет решений." << endl;
+            }
+        }
+        else {
+            const double x = -c / b;
+            cout << "x: " << x << endl;
+        }
+    }
+    if (a != 0 && b != 0 && c != 0) {
         std::cout << (-b + pow(D, 0.5)) / (2 * a) << std::endl;
         std::cout << (-b - pow(D, 0.5)) / (2 * a) << std::endl;
-    }
-    if (b == 0 && c == 0) {
-        std::cout << "х - Любой" << std::endl;
-    }
-    if (b == 0 && c != 0) {
-        std::cout << "Нет решений" << std::endl;
     }
 }
 
@@ -88,8 +101,7 @@ void task1_5() {
     std::cin >> lamp;
     std::cout << "Шторы открыты? (Y/N): ";
     std::cin >> curtains;
-    bool isLight = (time == "Y" && curtains == "Y") || (lamp == "Y");
-    std::cout << (isLight ? "Светло" : "Темно") << std::endl;
+    std::cout << ((time == "Y" && curtains == "Y") || (lamp == "Y") ? "Светло" : "Темно") << std::endl;
 }
 
 
@@ -116,6 +128,6 @@ void task1_6() {
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    task1_3();
+    task1_4();
     return 0;
 }
