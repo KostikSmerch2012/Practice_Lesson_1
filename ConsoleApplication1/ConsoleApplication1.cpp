@@ -39,9 +39,9 @@ void task1_2() {
 
 void task1_3() {
     double a, b;
-    std::cout << "First number: ";
+    std::cout << "First number: \n";
     std::cin >> a;
-    std::cout << "Second number: ";
+    std::cout << "Second number: \n";
     std::cin >> b;
     if (a != 0) {
         std::cout << -b / a << std::endl;
@@ -66,6 +66,12 @@ void task1_4() {
     if (a != 0 || b != 0 || c != 0) {
         std::cout << (-b + pow(m, 0.5)) / (2 * a) << std::endl;
         std::cout << (-b - pow(m, 0.5)) / (2 * a) << std::endl;
+    }
+    if (b == 0 && c == 0) {
+        std::cout << "х - Любой" << std::endl;
+    }
+    if (b == 0 && c != 0) {
+        std::cout << "Нет решений" << std::endl;
     }
 }
 
